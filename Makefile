@@ -1,11 +1,12 @@
 DEBUG ?= 0
 TARGET := socketecho
-SRCDIR = .
+INCDIRS = ./inc
+SRCDIR = ./src
 SRCS = $(TARGET).c
+SRCS += regexp.c
 SRCS += uriparser.c
 LIBS = libpcre2-8
 BUILDDIR = ./.build
-INCDIRS = $(SRCDIR)
 
 CFLAGS = -O2 -std=gnu17 -fms-extensions -Wall -Wextra -Wpedantic
 CFLAGS += $(shell pkg-config --cflags $(LIBS))
